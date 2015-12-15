@@ -20,6 +20,10 @@
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gf4-WH-Bjr" customClass="FaceView" customModule="Happiness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="RYz-6A-eib" appends="YES" id="TBX-dJ-75R"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -30,8 +34,16 @@
                             <constraint firstItem="gf4-WH-Bjr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZbQ-Oe-UWQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="gf4-WH-Bjr" id="Cet-a7-QVp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="RYz-6A-eib">
+                    <connections>
+                        <action selector="changeHappiness:" destination="BYZ-38-t0r" id="i1d-pZ-jjb"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="305" y="429"/>
         </scene>
