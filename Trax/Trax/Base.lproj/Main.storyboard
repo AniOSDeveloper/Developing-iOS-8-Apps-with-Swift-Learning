@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,6 +20,10 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jzm-TW-ofz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nsk-lv-3T3" appends="YES" id="lE6-9D-WSR"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -33,11 +38,80 @@
                     <connections>
                         <outlet property="mapView" destination="Jzm-TW-ofz" id="Yw3-b6-cMZ"/>
                         <segue destination="dv7-6H-ifR" kind="show" identifier="Show Image" id="L7B-i0-oz5"/>
+                        <segue destination="hwN-xh-f7D" kind="presentation" identifier="Edit Waypoint" modalPresentationStyle="formSheet" id="icg-xS-BKB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="nsk-lv-3T3">
+                    <connections>
+                        <action selector="addWaypoint:" destination="BYZ-38-t0r" id="Y8U-u3-Kxl"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1377" y="397"/>
+        </scene>
+        <!--Edit Waypoint-->
+        <scene sceneID="GW2-OT-QcF">
+            <objects>
+                <viewController id="ta4-Tr-4BV" customClass="EditWaypointViewController" customModule="Trax" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lgN-hS-f7K"/>
+                        <viewControllerLayoutGuide type="bottom" id="35f-4e-Tnm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Psg-Q5-7Aj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-aX-jhX">
+                                <rect key="frame" x="83" y="28" width="497" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="How-9D-l9w">
+                                <rect key="frame" x="83" y="66" width="497" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSJ-as-aJ1">
+                                <rect key="frame" x="20" y="31" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MP-b4-5RB">
+                                <rect key="frame" x="36" y="69" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9MP-b4-5RB" firstAttribute="leading" secondItem="Psg-Q5-7Aj" secondAttribute="leadingMargin" constant="16" id="30q-P0-KIM"/>
+                            <constraint firstItem="How-9D-l9w" firstAttribute="top" secondItem="8h4-aX-jhX" secondAttribute="bottom" constant="8" id="5I4-CK-onw"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QSJ-as-aJ1" secondAttribute="leading" id="CCV-Ms-x4r"/>
+                            <constraint firstItem="8h4-aX-jhX" firstAttribute="leading" secondItem="QSJ-as-aJ1" secondAttribute="trailing" constant="18" id="DGt-4h-Jyb"/>
+                            <constraint firstItem="8h4-aX-jhX" firstAttribute="leading" secondItem="How-9D-l9w" secondAttribute="leading" id="HAd-1a-L6u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="How-9D-l9w" secondAttribute="trailing" id="QZF-jj-uiN"/>
+                            <constraint firstItem="8h4-aX-jhX" firstAttribute="top" secondItem="lgN-hS-f7K" secondAttribute="bottom" constant="8" id="YjA-1d-FJK"/>
+                            <constraint firstItem="35f-4e-Tnm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="How-9D-l9w" secondAttribute="bottom" constant="504" id="cba-MK-qca"/>
+                            <constraint firstItem="QSJ-as-aJ1" firstAttribute="baseline" secondItem="8h4-aX-jhX" secondAttribute="baseline" id="g45-lI-dnM"/>
+                            <constraint firstItem="How-9D-l9w" firstAttribute="leading" secondItem="9MP-b4-5RB" secondAttribute="trailing" constant="18" id="g4z-WL-CiT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8h4-aX-jhX" secondAttribute="trailing" id="oLJ-PU-49k"/>
+                            <constraint firstItem="9MP-b4-5RB" firstAttribute="baseline" secondItem="How-9D-l9w" secondAttribute="baseline" id="r5I-Rw-Tx7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Waypoint" id="n39-zJ-eME">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="d8s-ZS-5wW"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="infoTextField" destination="How-9D-l9w" id="bUA-Ow-QVz"/>
+                        <outlet property="nameTextField" destination="8h4-aX-jhX" id="B6J-Vm-p2y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HWY-eI-mpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2231" y="1282"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="DMt-0k-6Jl">
@@ -94,6 +168,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hd5-Ic-RdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="565" y="397"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xuq-Sa-2Vx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hwN-xh-f7D" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vZp-gw-UZs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ta4-Tr-4BV" kind="relationship" relationship="rootViewController" id="PbD-pD-KEw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTX-Xs-6Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1419" y="1282"/>
         </scene>
     </scenes>
 </document>
