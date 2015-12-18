@@ -69,20 +69,29 @@
                                 <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="742" width="560" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="742" width="760" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="200" horizontalCompressionResistancePriority="800" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZV-QH-SiA">
                                 <rect key="frame" x="507" y="450" width="73" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular" ambiguous="YES">
                                     <rect key="frame" x="20" y="771" width="560" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="771" width="760" height="21"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="200" verticalCompressionResistancePriority="700" image="hh" translatesAutoresizingMaskIntoConstraints="NO" id="jUB-1n-VD9">
                                 <rect key="frame" x="20" y="292" width="479" height="300"/>
                                 <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="147" width="560" height="587"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="147" width="760" height="587"/>
                                 </variation>
                             </imageView>
                         </subviews>
@@ -154,13 +163,13 @@
                                 <exclude reference="uCK-K0-Imf"/>
                                 <exclude reference="AgG-CN-Hsz"/>
                                 <exclude reference="yIX-MG-361"/>
+                                <exclude reference="35n-0r-oD9"/>
                                 <exclude reference="21Q-X5-zen"/>
                                 <exclude reference="2WN-w0-8Da"/>
                                 <exclude reference="Y2a-SZ-PXK"/>
                                 <exclude reference="0xX-34-0hj"/>
                                 <exclude reference="K8r-WH-6hm"/>
                                 <exclude reference="e4n-OT-6Rx"/>
-                                <exclude reference="35n-0r-oD9"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -171,6 +180,8 @@
                                 <exclude reference="Ngu-97-Slg"/>
                                 <exclude reference="bXO-B6-2LR"/>
                                 <include reference="uCK-K0-Imf"/>
+                                <include reference="35n-0r-oD9"/>
+                                <exclude reference="JAK-bW-iWP"/>
                                 <include reference="21Q-X5-zen"/>
                                 <include reference="2WN-w0-8Da"/>
                                 <exclude reference="3tV-w7-ndO"/>
@@ -182,8 +193,6 @@
                                 <exclude reference="eqt-vB-68L"/>
                                 <exclude reference="jDi-Zw-t5C"/>
                                 <exclude reference="yse-Ou-Ucs"/>
-                                <include reference="35n-0r-oD9"/>
-                                <exclude reference="JAK-bW-iWP"/>
                             </mask>
                         </variation>
                     </view>
