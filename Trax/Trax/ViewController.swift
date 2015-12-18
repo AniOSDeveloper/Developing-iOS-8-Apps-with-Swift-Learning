@@ -49,6 +49,7 @@ class ViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentation
             let coordinate = mapView.convertPoint(sender.locationInView(mapView), toCoordinateFromView: mapView)
             let waypoint = EditableWaypoint(latitude: coordinate.latitude, longitude: coordinate.longitude)
             waypoint.name = "Da Wang Dropped"
+            //waypoint.links.append(GPX.Link(href: "https://lh3.googleusercontent.com/TNUI2krkbc0112M6u4wdSz13oQ4Mc1_w_yV8AaOpk3T46HOWQE62gWNqPs922wWH5PEReQrG8ebx1epK0P6sE0ck8WQCIpmmzG-Ajz_yd0Gbz_0B76fl0V1l4MAFs8yC1bssOYXfCHiGpeYeMjtLudfaqTwaUrqwLdPhJWnwBY0TdDplTHs7J1jrgjcRT0v0J4iJJCciCW7yMONpDVaey5PIjs5iBzsmVZay7ID0qqqDEGAIZKH-dRMUlglrMBpXu5iOzBLzJXlnW2UrwACAFZYM_FiScz4MADqrzBBfEMQySqaN5B-OJpVXqT4XdQgz7YUC1aflXL0QPSYgBF0FbGYSyTJSxPY8CgDLN8NgpZHh0-h8Vo-uz0lPQVpUBTFE1hi7kpSXBp-IoPJ5WKDRSLSIZ76Z_nQLhxrEcX2SZ_BXcAvefB66yjFrhMktsbA_L04bbZflJAxHIET8fneVRwnEcEJ5wFn9x1eWtHX-ol3o41RA4yXts9jQXZHkxWaKor2-KIih5w8w_nZUetZwdzMouunIfwwy_hnm87iInNrhpk9Yki9W3zDSM34m7U4FgRllFQ=w668-h890-no"))
             mapView.addAnnotation(waypoint)
         }
     }
